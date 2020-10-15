@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Header from "./components/header";
-import InputForm from "./components/inputForm";
-import Habits from "./components/habits";
+import Navbar from '../components/navbar';
+import InputForm from '../components/inputForm';
+import Habits from '../components/habits';
 
 
 class Main extends Component {
@@ -14,9 +14,9 @@ class Main extends Component {
   };
 
   handleInclement = (id) => {
-    let habits = [...this.state.habits];
-    const indexOfId = habits.findIndex((habit) => habit.id === id);
-    habits[indexOfId].count++;
+    let habits = this.state.habits.map(x => {
+      return x.id===id ? {...x, count: x.count + 1} : {...x}
+    });
     this.setState({
       habits,
     })
@@ -26,7 +26,7 @@ class Main extends Component {
     let habits = [...this.state.habits];
     const indexOfId = habits.findIndex((habit) => habit.id === id);
     if(habits[indexOfId].count<=0) return;
-    habits[indexOfId].count--;
+    habits[indexOfId].count-=1;
     this.setState({
       habits
     })
@@ -51,7 +51,7 @@ class Main extends Component {
     const habitsCnt = this.state.habits.length;
     return (
       <div className="main">
-        <Header count={habitsCnt} />
+        <Navbar count={habitsCnt} />
         <InputForm onAdd={this.hanldeAdd}/>
         <Habits 
           habits={this.state.habits}

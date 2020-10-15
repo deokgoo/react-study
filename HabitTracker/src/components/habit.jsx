@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 
-class habit extends Component {
-  handleIncrement = () => {
+class habit extends PureComponent {
+  onIncrement = () => {
     this.props.onIncrement(this.props.habit.id);
   };
 
@@ -21,7 +21,7 @@ class habit extends Component {
         <span className="habit-count">{count}</span>
         <button
           className="habit-button habit-increase"
-          onClick={this.handleIncrement}
+          onClick={this.onIncrement}
         >
           <i className="fas fa-plus-square"></i>
         </button>

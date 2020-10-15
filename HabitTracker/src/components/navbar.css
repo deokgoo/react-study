@@ -1,4 +1,4 @@
-#header {
+#navbar {
     background-color: rgb(245, 240, 180);
     width: 100vw;
     height: 10rem;
@@ -6,19 +6,19 @@
     align-items: center;
 }
 
-.header__icon {
+.navbar__icon {
     font-size: 3rem;
     color: green;
     margin-left: 40px;
     justify-content: center;
 }
 
-.header__title {
+.navbar__title {
     font-size: 3rem;
     margin: 0 1rem;
 }
 
-.header__count {
+.navbar__count {
     text-align: center;
     font-size: 2rem;
     width: 2.5rem;

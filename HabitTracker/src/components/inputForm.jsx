@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './inputForm.css';
 
 class InputForm extends Component {
   onAdd(evt) {
@@ -8,10 +9,10 @@ class InputForm extends Component {
 
   render() {
     return (
-      <>
-        <input type="text"/>
-        <button className="fontawesom something..." onClick={this.onAdd}>submit</button>
-      </>
+      <div className="inputForm">
+        <input className="inputForm__input" type="text"/>
+        <button className="inputForm__button" onClick={this.onAdd}>Add</button>
+      </div>
     )
   }
 }

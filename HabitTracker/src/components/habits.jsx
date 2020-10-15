@@ -6,20 +6,20 @@ class Habits extends Component {
   render() {
     const {
       habits,
-      handleInclement,
-      handleDecrement,
-      handleAdd,
-      handleRemove } = this.props;
+      onInclement,
+      onDecrement,
+      onAdd,
+      onRemove } = this.props;
     return (
       <ul className="habits">
         {habits.map((habit) => (
           <Habit
             key={habit.id}
             habit={habit}
-            onIncrement={handleInclement}
-            onDecrement={handleDecrement}
-            onAdd={handleAdd}
-            onRemove={handleRemove}
+            onIncrement={onInclement}
+            onDecrement={onDecrement}
+            onAdd={onAdd}
+            onRemove={onRemove}
           />
         ))}
       </ul>
