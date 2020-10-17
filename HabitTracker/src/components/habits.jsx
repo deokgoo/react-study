@@ -9,20 +9,24 @@ class Habits extends Component {
       onInclement,
       onDecrement,
       onAdd,
-      onRemove } = this.props;
+      onRemove,
+      onReset } = this.props;
     return (
-      <ul className="habits">
-        {habits.map((habit) => (
-          <Habit
-            key={habit.id}
-            habit={habit}
-            onIncrement={onInclement}
-            onDecrement={onDecrement}
-            onAdd={onAdd}
-            onRemove={onRemove}
-          />
-        ))}
-      </ul>
+      <>
+        <ul className="habits">
+          {habits.map((habit) => (
+            <Habit
+              key={habit.id}
+              habit={habit}
+              onIncrement={onInclement}
+              onDecrement={onDecrement}
+              onAdd={onAdd}
+              onRemove={onRemove}
+            />
+          ))}
+        </ul>
+        <button className="btn-reset" onClick={onReset}>Reset All</button>
+      </>
     );
   }
 }

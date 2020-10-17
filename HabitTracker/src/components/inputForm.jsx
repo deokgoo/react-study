@@ -1,19 +1,33 @@
-import React, { Component } from 'react';
-import './inputForm.css';
+import React, { Component } from "react";
+import "./inputForm.css";
 
 class InputForm extends Component {
-  onAdd(evt) {
-    const title = evt.target.value;
-    this.props.onAdd(title);
-  }
+  inputRef = React.createRef();
+
+  onSubmit = (event) => {
+    event.preventDefault();
+    const title = this.inputRef.current.value;
+    title && this.props.onAdd(title);
+  };
 
   render() {
     return (
-      <div className="inputForm">
-        <input className="inputForm__input" type="text"/>
-        <button className="inputForm__button" onClick={this.onAdd}>Add</button>
-      </div>
-    )
+      <form className="inputForm" onSubmit={this.onSubmit}>
+        <input
+          className="inputForm__input"
+          type="text"
+          onChange={this.inputText}
+          ref={this.inputRef}
+        />
+        <button
+          type="submit"
+          className="inputForm__button"
+          onClick={this.onAdd}
+        >
+          Add
+        </button>
+      </form>
+    );
   }
 }
 
