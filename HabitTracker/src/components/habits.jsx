@@ -12,8 +12,8 @@ class Habits extends Component {
       onRemove,
       onReset } = this.props;
     return (
-      <>
-        <ul className="habits">
+      <div className="habits">
+        <ul>
           {habits.map((habit) => (
             <Habit
               key={habit.id}
@@ -26,7 +26,7 @@ class Habits extends Component {
           ))}
         </ul>
         <button className="btn-reset" onClick={onReset}>Reset All</button>
-      </>
+      </div>
     );
   }
 }

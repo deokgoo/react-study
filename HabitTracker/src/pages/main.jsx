@@ -15,8 +15,12 @@ class Main extends Component {
 
   handleInclement = (id) => {
     let habits = this.state.habits.map((x) => {
-      return x.id !== id ? {...x} : {...x, count: x.count+1};
+      if(x.id === id) {
+        return {...x, count: x.count+1}
+      }
+      return x;
     });
+
     this.setState({
       habits,
     });
@@ -24,7 +28,11 @@ class Main extends Component {
 
   handleDecrement = (id) => {
     let habits = this.state.habits.map((x) => {
-      return x.id !== id ? {...x} : {...x, count: x.count-1<0?0:x.count-1};
+      if(x.id === id) {
+        const count = x.count - 1 ;
+        return {...x, count: count<0 ? 0 : count}
+      }
+      return x;
     });
     this.setState({
       habits,

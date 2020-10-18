@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import "./inputForm.css";
 
-class InputForm extends Component {
+class InputForm extends PureComponent {
   inputRef = React.createRef();
 
   onSubmit = (event) => {
