@@ -1,4 +1,4 @@
-.inputForm {
+.habitAddForm {
     height: 2rem;
     display: flex;
     justify-content: space-around;
@@ -6,12 +6,12 @@
     margin: 1rem 0;
 }
 
-.inputForm__input {
+.habitAddForm__input {
     height: 100%;
     width: 70%;
 }
 
-.inputForm__button {
+.habitAddForm__button {
     background-color: green;
     border-radius: 5px;
     font-size: 1.5rem;

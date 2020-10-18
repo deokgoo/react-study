@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import Navbar from '../components/navbar';
-import InputForm from '../components/inputForm';
+import InputForm from '../components/habitAddForm';
 import Habits from '../components/habits';
 
 
-class Main extends Component {
+class Main extends PureComponent {
   state = {
     habits: [
       { id: 1, name: "Reading", count: 0 },
