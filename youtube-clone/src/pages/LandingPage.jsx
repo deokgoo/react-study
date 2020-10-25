@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { getPopularVideos } from '../services/youtubeApi';
 
-import VideoList from '../components/VideoList';
+import VideoList from '../components/videoList/videoList';
 
 const LandingPage = () => {
   useEffect(() => {
