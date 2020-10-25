@@ -1,12 +1,10 @@
-import axios from 'axios';
+// import axios from 'axios';
 
-const getPopularVideos = async () => {
-
+export const getPopularVideos = async () => {
+  console.log(process.env);
   return process.env.YOUTUBE_API_BASE_URL;
 }
 
-const getSearchVideo = async (query) => {
-  const url = '';
-}
-
-
+// export const getSearchVideo = async (query) => {
+//   const url = '';
+// }

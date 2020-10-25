@@ -1,16 +1,18 @@
-import React from 'react';
-import apiService from '../services/youtubeApi';
+import React, { useEffect } from 'react';
+import { getPopularVideos } from '../services/youtubeApi';
 
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import VideoList from '../components/VideoList';
 
 const LandingPage = () => {
+  useEffect(() => {
+    const fetchData = async () => {
+      console.log(await getPopularVideos());
+    }
+    fetchData();
+  })
   return (
     <div className="landingPage">
-      <Header />
       <VideoList />
-      <Footer />
     </div>
   )
 };
