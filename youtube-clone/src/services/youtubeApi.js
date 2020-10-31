@@ -15,7 +15,6 @@ const requestApi = (url, method) => {
 }
 
 export const getPopularVideos = async () => {
-  console.log(process.env);
   const popularUrl = `${REACT_APP_YOUTUBE_API_BASE_URL}/videos?key=${REACT_APP_API_KEY}&part=snippet&chart=mostPopular&maxResults=25`;
   const method = 'GET';
   const responseData = await requestApi(popularUrl, method)
