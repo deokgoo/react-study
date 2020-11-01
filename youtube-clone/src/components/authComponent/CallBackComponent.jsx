@@ -5,14 +5,10 @@ const CallBackComponent = (props) => {
   useEffect(() => {
     const signinRedirectCallBack = async () => {
       try {
-        await props.userManager.signinRedirect();
-        props.successCallback();
+        await props.userManager.signinCallback();
+        window.location.href = '/';
       } catch(err) {
-        if (props.errorCallback) {
-          props.errorCallback(err);
-        } else {
-          throw new Error(`Error handling redirect callback: ${err.message}`);
-        }
+        throw new Error(`Error handling redirect callback: ${err.message}`);
       }
     };
     signinRedirectCallBack();
@@ -23,17 +19,7 @@ const CallBackComponent = (props) => {
 };
 
 CallBackComponent.propTypes = {
-  // the content to render
-  children: PropTypes.element.isRequired,
-
-  // the userManager
   userManager: PropTypes.object.isRequired,
-
-  // a function invoked when the callback succeeds
-  successCallback: PropTypes.func.isRequired,
-
-  // a function invoked when the callback fails
-  errorCallback: PropTypes.func
 }
 
 export default CallBackComponent;

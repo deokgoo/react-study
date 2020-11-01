@@ -1,8 +1,10 @@
 import createUserManager from "../redux/auth/helpers/createUserManager";
+import { WebStorageStateStore } from 'oidc-client';
 
 const { REACT_APP_AUTH_SERVER, REACT_APP_AUTH_CLIENT } = process.env;
 
 const userManagerConfig = {
+  userStore: new WebStorageStateStore(),
   authority: `${REACT_APP_AUTH_SERVER}`,
   client_id: 'interactive.public',
   scope: 'openid profile email api offline_access',

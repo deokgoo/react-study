@@ -7,16 +7,7 @@ import userManager from "../utils/userManager";
 class CallbackPage extends React.Component {
   render() {
     return (
-      <CallbackComponent
-        userManager={userManager}
-        successCallback={() => this.props.dispatch(push("/"))}
-        errorCallback={error => {
-          this.props.dispatch(push("/"));
-          console.error(error);
-        }}
-      >
-        {this.props.children}
-      </CallbackComponent>
+      <CallbackComponent userManager={userManager} />
     );
   }
 }
