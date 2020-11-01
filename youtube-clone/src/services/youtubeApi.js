@@ -9,7 +9,13 @@ const requestApi = (url, method) => {
 
   return new Promise((resolve, reject) => {
     fetch(url, requestOptions)
-      .then(res => resolve(res.json()))
+      .then(res => {
+        if(res.status === 200) {
+          resolve(res.json())
+        } else {
+          reject(res);
+        }
+      })
       .catch(err => reject(err));
   })
 }
