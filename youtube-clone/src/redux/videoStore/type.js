@@ -1,0 +1,2 @@
+export const UPDATE_VIDEO_LIST = 'UPDATE_VIDEO_LIST';
+export const INIT_VIDEO_LIST = 'INIT_VIDEO_LIST';

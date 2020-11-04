@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { userExpired, userFound, silentRenewError, sessionTerminated, userExpiring, userSignedOut } from '../../redux/auth/action';
+import { userExpired, userFound, silentRenewError, sessionTerminated, userExpiring, userSignedOut } from '../../redux/authStore/action';
 
 const OidcProvider = (props) => {
   useEffect(() => {

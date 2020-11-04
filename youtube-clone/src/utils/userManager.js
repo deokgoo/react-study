@@ -1,4 +1,4 @@
-import createUserManager from "../redux/auth/helpers/createUserManager";
+import createUserManager from "../redux/authStore/helpers/createUserManager";
 import { WebStorageStateStore } from 'oidc-client';
 
 const { REACT_APP_AUTH_SERVER, REACT_APP_AUTH_CLIENT } = process.env;

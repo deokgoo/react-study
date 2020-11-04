@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
-import auth from './auth/reducer';
+import authStore from './authStore/reducer';
+import videoStore from './videoStore/reducer';
 
-export default combineReducers({ auth });
+export default combineReducers({ authStore, videoStore });

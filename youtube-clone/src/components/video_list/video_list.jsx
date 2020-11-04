@@ -1,25 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { getPopularVideos } from '../../services/youtubeApi';
+import React from 'react';
 import VideoCard from '../video_card/video_card';
 import style from './video_list.module.css';
+import {shallowEqual, useSelector} from 'react-redux';
 
 const VideoList = () => {
-  const [videoList, setVideoList] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const list = await getPopularVideos();
-        console.log(list);
-        await setVideoList(list);
-      } catch(err) {
-        console.log('err', err);
-        // setTimeout(() => fetchData(), 5000);
-      }
-    }
-    fetchData();
-  }, [])
-
+  const videoList = useSelector(state => {
+    return state.videoStore.videos;
+  }, shallowEqual);
   return (
     <div className={style.container}>
       {videoList ?
