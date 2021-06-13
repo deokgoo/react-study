@@ -1,7 +1,7 @@
-import Habit from './components/habit';
+import Habits from './pages/habits';
 
 function App() {
-  return <Habit />
+  return <Habits />
 }
 
 export default App;
