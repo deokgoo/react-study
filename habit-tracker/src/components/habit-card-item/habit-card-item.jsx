@@ -28,7 +28,7 @@ class HabitCardItem extends Component {
         <button className="habit-button habit-decrease" onClick={this.handleDecrement}>
           <i className="fas fa-minus-square"></i>
         </button>
-        <button className="habit-button habit-trash">
+        <button className="habit-button habit-trash" onClick={this.handleDelete}>
           <i className="fas fa-trash"></i>
         </button>
       </li>
