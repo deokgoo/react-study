@@ -37,7 +37,7 @@ class HabitCardItem extends Component {
 }
 
 HabitCardItem.propTypes = {
-  id: PropTypes.number,
+  id: PropTypes.string,
   title: PropTypes.string,
   cnt: PropTypes.number,
   handleIncrementCallback: PropTypes.func,

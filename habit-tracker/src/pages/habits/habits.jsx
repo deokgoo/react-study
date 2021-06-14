@@ -22,12 +22,12 @@ class Habits extends Component {
     this.handleDeleteCallback = this.handleDeleteCallback.bind(this);
   }
   handleIncrementCallback(id) {
-    const updateHabits = Object.assign({}, this.state.habits);
+    const updateHabits = Object.assign(this.state.habits);
     updateHabits[id].cnt++;
-    this.setState({});
+    this.setState({habits: updateHabits});
   }
   handleDecrementCallback(id) {
-    const updateHabits = Object.assign({}, this.state.habits);
+    const updateHabits = JSON.parse(JSON.stringify(this.state.habits));
     updateHabits[id].cnt--;
     if(updateHabits[id].cnt < 0) return;
 
