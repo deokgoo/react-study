@@ -1,5 +1,8 @@
 import { Component } from 'react';
+import Nav from '../../components/nav';
+import HabitSearchBar from '../../components/habit-add-bar';
 import HabitCardItem from '../../components/habit-card-item';
+import './habits.css';
 
 class Habits extends Component {
   constructor(props) {
@@ -43,11 +46,15 @@ class Habits extends Component {
   render() {
     return (
       <div className="habits">
+        <Nav />
+        
+        <HabitSearchBar />
         {
           Object.keys(this.state.habits).map(x => {
             const item = this.state.habits[x];
             return (
-              <HabitCardItem 
+              <div className="habits">
+                <HabitCardItem 
                   key={x}
                   id={x}
                   title={item.title} 
@@ -55,9 +62,14 @@ class Habits extends Component {
                   handleIncrementCallback={this.handleIncrementCallback}
                   handleDecrementCallback={this.handleDecrementCallback}
                   handleDeleteCallback={this.handleDeleteCallback}>
-              </HabitCardItem>)
+                </HabitCardItem>
+              </div>
+            )
           })
         }
+        <div className="reset-wrapper">
+          <button type="reset">resetAll</button>
+        </div>
       </div>
     )
   }
